@@ -18,8 +18,15 @@ module.exports = function(environment) {
       // when it is created
     }
   };
-
+//  ENV.apiURL = "http://127.0.0.1:5000/api/";
   if (environment === 'development') {
+    ENV.APP.LOG_TRANSITIONS = true;
+
+    ENV.contentSecurityPolicy = {
+      'connect-src': "'self' http://127.0.0.1:8000",
+      'style-src': "'self' 'unsafe-inline' *",
+      
+    }
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;
     // ENV.APP.LOG_TRANSITIONS = true;
@@ -35,6 +42,7 @@ module.exports = function(environment) {
     // keep test console output quieter
     ENV.APP.LOG_ACTIVE_GENERATION = false;
     ENV.APP.LOG_VIEW_LOOKUPS = false;
+
 
     ENV.APP.rootElement = '#ember-testing';
   }

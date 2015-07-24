@@ -1,0 +1,20 @@
+Some set of tests which are preconfigured for the candidate will be Here
+
+<!--div class="url">URL: {{target.url}}</div-->
+
+<aside>
+  <ul>
+    <li><h3>ABAP test  <input type="button" {{action 'go_to_test'}} name="" value="Go to test" style="font-size:18px; " /> </h3></li>
+
+    {{#each tests as |test|}}
+      <li>
+        {{#link-to  test current-when="test"}}
+          <span class="count">
+            {{test.length}}
+          </span>
+          {{test.name}}
+        {{/link-to}}
+      </li>
+    {{/each}}
+  </ul>
+</aside>

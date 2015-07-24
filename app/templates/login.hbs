@@ -1,0 +1,23 @@
+<div id="login_form">
+    <!--form name="f1" method="post" action="api/login" id="f1"-->
+        <table id="f1">
+            <tr>
+                <td class="f1_label">User Name :</td><td>{{input value=username placeholder="Enter your name"}}
+                </td>
+            </tr>
+            <tr>
+                <td class="f1_label">Password  :</td><td> {{input value=password type="password"}}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="button" {{action 'login'}} name="login" value="Login" style="font-size:18px; " />
+                    
+                </td>
+            </tr>
+        </table>
+        {{#if loginFailed}}
+            <div class="alert alert-danger">Invalid username or password.</div>
+        {{/if}}
+    <!--/form-->
+</div>

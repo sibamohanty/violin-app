@@ -1,3 +1,49 @@
-<h2 id="title">Welcome to Ember.js</h2>
+<header>
+  <h1>Tutor tester</h1>
 
-{{outlet}}
+  <script type="text/javascript">
+  (function exam_timer(){
+    console.log("Will initiazlize the timer here");
+    this.counter : 30,
+    this.cur_time : function (){
+     setTimeout(this.decrease_counter,100)
+   },
+
+  })();
+
+  </script>
+</header>
+<style type="text/css">
+#login_form {
+    position: absolute;
+    top: 20%;
+    left: 30%;
+    right: 30%;
+    bottom: 20%;
+    font-size: 18px;
+}
+
+#f1 {
+    background-color: #ccc;
+    border-style: solid;
+    border-width: 1px;
+}
+.f1_label {
+    white-space: nowrap;
+}
+
+</style>
+<div class='top-bar'>
+  {{outlet 'top-bar'}}
+</div>
+<div>
+  {{outlet}}
+</div>
+
+<div class= 'center-area'>
+  {{outlet 'ceter-area'}}
+</div>
+
+<footer>
+  &copy;2015 Mindteck India Pvt Ltd.
+</footer>

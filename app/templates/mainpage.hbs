@@ -1,0 +1,31 @@
+
+<!--ul class="example-gravatar">
+  <li>{{gravatar-image email="tomster@emberjs.com" size="200"}}</li>
+  <li>{{gravatar-image size="200"}}</li>
+</ul>-->
+  {{#unless login.loginFailed }}
+  <label><b>timeleft </b>: {{ timer.total_time }}</label>
+
+  <br>
+  {{/unless}}
+1 <span class="question"> What does blal do ? </span>
+  <br>
+  <input  type="checkbox" name= "A" value = "1" > A) Some choice here
+  <br>
+  <input  type="checkbox" name= "B" value = "1" > B) Some 2nd choice  here
+  <br>
+  <input  type="checkbox" name= "C" value = "1" > C) Some 3d answere here
+
+ <br>
+  <input type="button" value = "Submit Answer" {{action 'submit_answer'}} />
+  <input type="button" value = "Skip question" {{action 'skip_question'}} />
+
+<!--
+{{input type="checkbox" name="false" checked=false}}
+
+{{view "select" content=people
+                optionLabelPath="content.fullName"
+                optionValuePath="content.id"
+                prompt="Pick a person:"
+                selection=selectedPerson}}
+-->
