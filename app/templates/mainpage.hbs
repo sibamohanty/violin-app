@@ -4,11 +4,12 @@
   <li>{{gravatar-image size="200"}}</li>
 </ul>-->
   {{#unless login.loginFailed }}
-  <label><b>timeleft </b>: {{ timer.total_time }}</label>
+  {{ timer-comp }}
 
   <br>
   {{/unless}}
-1 <span class="question"> What does blal do ? </span>
+
+ {{ question-comp }}
   <br>
   <input  type="checkbox" name= "A" value = "1" > A) Some choice here
   <br>

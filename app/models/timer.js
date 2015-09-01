@@ -1,4 +1,6 @@
+import DS from 'ember-data';
 
+/*
 export default DS.Model.extend({
       total_time : DS.attr('integer',{defaultValue: 30 }),
 
@@ -25,3 +27,4 @@ export default DS.Model.extend({
 
 
   });
+  */
