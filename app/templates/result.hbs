@@ -1,0 +1,57 @@
+<div class="resultwrapper">
+<h2 align="center">Results</h2>
+<br>
+<label id="TimeTaken">Total time taken is : {{model.timeTaken}} seconds<br></label>
+<br>
+<label id="rightcomp"> TotalMarks: {{totalMarksGet}} </label><br>
+<label id="rightcomp"> Total percentage: {{percentage}} % </label><br><br>
+{{#if resultStatus}}
+<label id="rightcomp"> You Are Pass </label>
+{{else}}
+<label id="wrongcomp"> You Are Fail </label>
+{{/if}}
+
+ {{result-comp attemptQuestion=attemptQuestion totalQuestionNumber=totalQuestionNumber
+     skipQuestion=skipQuestion totalCorrectAnswer=CorrectAnswer  incorrectAnswer=incorrectAnswer}}
+ <br>
+ <br>
+{{#each qa in model}}
+{{#if qa.attempted}}
+<div class="attempted_Question">
+  Time Spent : {{qa.totalTimeSpent}}<br><br>
+  {{qa.questionNum}} - {{ qa.question }} <br>
+  {{#each qa.strike as |ans| }}
+    {{#if qa.attempted}}
+      {{#if ans.correctstrike}}
+        {{wronganswer-comp answer=ans.answer answerText=ans.answerText isClicked=ans.selected }}
+      {{else}}
+         {{rightanswer-comp answer=ans.answer answerText=ans.answerText isClicked=ans.selected }}
+      {{/if}}
+    {{else}}
+      {{wrong-answer-comp answer=ans.answer answerText=ans.answerText isClicked=ans.selected }}
+    {{/if}}
+  {{/each}}
+  <br>
+  <br>
+  </div>
+  {{else}}
+  <div class="Unattempted_Question">
+  Time Spent : {{qa.totalTimeSpent}}<br><br>
+  {{qa.questionNum}} - {{ qa.question }} <br>
+  {{#each qa.strike as |ans| }}
+    {{#if qa.attempted}}
+      {{#if ans.correctstrike}}
+        {{wronganswer-comp answer=ans.answer answerText=ans.answerText isClicked=ans.selected }}
+      {{else}}
+         {{rightanswer-comp answer=ans.answer answerText=ans.answerText isClicked=ans.selected }}
+      {{/if}}
+    {{else}}
+     {{wrong-answer-comp answer=ans.answer answerText=ans.answerText isClicked=ans.selected }}
+    {{/if}}
+  {{/each}}
+  <br>
+  <br>
+  </div>
+  {{/if}}
+{{/each}}
+</div>

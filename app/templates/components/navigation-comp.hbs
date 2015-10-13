@@ -1,0 +1,11 @@
+{{#each question as |item|}}
+{{#if item.attempted}}
+<button  id="navigateButton" value={{item.id}} class="btn-attempted"  {{action 'jumpTo'  item.id }} > Q {{item.id}} </button>
+{{/if}}
+{{#if item.skipped}}
+<button id="navigateButton" value={{item.id}} class="btn-skipped"  {{action 'jumpTo' item.id }} > Q {{item.id}} </button>
+{{/if}}
+{{#if item.unattempted}}
+<button id="navigateButton" value={{item.id}} class="btnnvg"  {{action 'jumpTo'  item.id }} > Q {{item.id}} </button>
+{{/if}}
+{{/each}}

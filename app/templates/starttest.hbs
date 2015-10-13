@@ -1,0 +1,40 @@
+<div class="wrapper2">
+
+    <div class="mindtecklogo"><img src="Mindteck-icon.png"></div>
+    <div style="margin-left:50px">
+    {{#unless login.loginFailed }}
+    <label id="tmr1">
+        {{ timer-comp resetT=qCount secondsElapsed=timeLeft killTimer=testCompleted}}
+    </label>
+        <br>
+        <div class="Navigation">
+        {{navigation-comp question=model action="jumpTo" }}
+        </div>
+    {{/unless}}
+    <label id="Question">{{question-comp questionN=questionNumber questionText =questionText.question}}</label>
+    {{#if mcsa }}
+     {{#each answerText }}
+        <label id="choice"> {{ answermcsa-comp answer = this.answer isSelected=this.selected answerText=this.answerText }}</label>
+     {{/each}}
+
+    {{else}}
+        {{#each answerText }}
+            <label id="choice">{{ answermcma-comp answer = this.answer isClicked=this.selected answerText=this.answerText}}</label>
+        {{/each}}
+    {{/if}}
+    <br>
+    <br>
+    <input type="button" class="btnprv" value = "Previous" {{action 'previous_back'}}  />
+    <input type="button" class="btnsbmt" value = "Submit" {{action 'submit_answer'}} />
+    <input type="button" class="btnskip" value = "Skip" {{action 'skip_question'}} />
+    <br>
+    {{#if testCompleted}}
+   {{viewresult-comp show_test="show_test" exit_test="exit_test"}}
+    {{/if}}
+    {{#if timeOver}}
+    {{log timeOver }}
+    {{view-comp show_test="show_test" exit_test="exit_test"}}
+    {{/if}}
+  <input type="button" class="btntrmnt" value = "Terminate Test" {{action 'Terminate_Test'}}/>
+</div>
+</div>

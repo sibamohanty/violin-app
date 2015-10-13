@@ -12,9 +12,18 @@ export default Ember.ObjectController.extend({
 
     //  this.transitionToRoute('testpage');
     },
+    Previous_back : function (){
+      //this.transitionToRoute('testpage');
+      console.log("Will go to the next quesiton");
+
+    },
     skip_question : function (){
       //this.transitionToRoute('testpage');
       console.log("Will go to the next quesiton");
+
+    },
+    Terminate_Test: function (){
+      this.transitionToRoute('terminate');
 
     }
   }

@@ -31,10 +31,13 @@ export default DS.Model.extend({
       return DS.hasOne('correctAnswer');
     }
   },
-  isCorrectlyAnswered : function (){
+  isCorrectlyAnswered : function ()
+  {
     if (this.get('isAnswered') && this.get('selectedChoice') == this.get('correctKey')){
       return true;
-    }else{
+    }
+	else
+	{
       return false;
     }
 

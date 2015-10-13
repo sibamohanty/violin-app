@@ -1,6 +1,4 @@
-import DS from 'ember-data';
 
-/*
 export default DS.Model.extend({
       total_time : DS.attr('integer',{defaultValue: 30 }),
 
@@ -11,7 +9,7 @@ export default DS.Model.extend({
       },
       decrease_counter : function (){
         var cur = this.get('total_time');
-        if (cur >0){
+        if (cur > 0){
           this.set(total_time, cur -1);
           setTimeout(decrease_counter,1);
         }
@@ -27,4 +25,3 @@ export default DS.Model.extend({
 
 
   });
-  */
